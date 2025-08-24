@@ -1,0 +1,258 @@
+{
+  "Classes": [
+    {
+      "$type": "Onsite",
+      "Name": "Morning Yoga",
+      "DifficultyLevel": 2,
+      "Description": "A relaxing yoga class for intermediate level",
+      "Price": 20.5,
+      "Status": 1
+    },
+    {
+      "$type": "Online",
+      "Name": "Beginner Boxing",
+      "DifficultyLevel": 1,
+      "Description": "Basic boxing techniques for beginners",
+      "Price": 22.0,
+      "Status": 0
+    },
+    {
+      "$type": "Onsite",
+      "Name": "Advanced Spinning",
+      "DifficultyLevel": 3,
+      "Description": "High-intensity indoor cycling",
+      "Price": 30.0,
+      "Status": 1
+    },
+    {
+      "$type": "Onsite",
+      "Name": "Intermediate Swimming",
+      "DifficultyLevel": 2,
+      "Description": "Swimming techniques for intermediate learners",
+      "Price": 28.0,
+      "Status": 1
+    }
+  ],
+  "Memberships": [
+    {
+      "Type": 0,        
+      "Price": 50.0
+    },
+    {
+      "Type": 1,         
+      "Price": 120.0
+    }
+  ],
+
+  "People": [
+    {
+      "$type": "Admin",
+      "Name": "Alice",
+      "Surname": "Smith",
+      "Address": "123 Admin St",
+      "Permissions": ["ManageUsers", "EditClasses"]
+    },
+    {
+      "$type": "Admin",
+      "Name": "Mark",
+      "Surname": "Brown",
+      "Address": "456 Admin Rd",
+      "Permissions": ["ViewReports"]
+    },
+    {
+      "$type": "Customer",
+      "Name": "Bob",
+      "Surname": "Jones",
+      "Address": "789 Customer Ln",
+      "ClassLevel": 2,
+      "SpecialNeeds": "None"
+    },
+    {
+      "$type": "Customer",
+      "Name": "Linda",
+      "Surname": "Green",
+      "Address": "321 Customer Ave",
+      "ClassLevel": 1,
+      "SpecialNeeds": "Hearing impairment"
+    },
+    {
+      "$type": "Instructor",
+      "Name": "Carol",
+      "Surname": "Lee",
+      "Address": "654 Instructor Blvd",
+      "ClassType": "Yoga",
+      "LicenseNo": "LIC123456",
+      "Available": true
+    },
+    {
+      "$type": "Instructor",
+      "Name": "Daniel",
+      "Surname": "Nguyen",
+      "Address": "987 Instructor Way",
+      "ClassType": "Pilates",
+      "LicenseNo": "LIC654321",
+      "Available": true
+    },
+    {
+      "$type": "Instructor",
+      "Name": "John",
+      "Surname": "Smith",
+      "Address": "654 Instructor Blvd",
+      "ClassType": "Yoga",
+      "LicenseNo": "LIC123457",
+      "Available": true
+    },
+    {
+      "$type": "Instructor",
+      "Name": "Katie",
+      "Surname": "Nguyen",
+      "Address": "987 Instructor Way",
+      "ClassType": "Pilates",
+      "LicenseNo": "LIC654222",
+      "Available": true
+    },
+    {
+      "$type": "Instructor",
+      "Name": "Marie",
+      "Surname": "De Sophie",
+      "Address": "987 Instructor Way",
+      "ClassType": "Yoga",
+      "LicenseNo": "LIC654223",
+      "Available": true
+    }
+  ],
+
+  "Timetables": [
+    {
+      "Version": "v1.0",
+      "InstructorId": 5
+    },
+    {
+      "Version": "v2.1",
+      "InstructorId": 6
+    }
+  ],
+
+  "Orders": [
+    {
+      "Date": "2024-06-01T10:00:00",
+      "Wishes": "Near window",
+      "CustomerId": 3,
+      "ClassId": 1
+    },
+    {
+      "Date": "2024-06-12T14:30:00",
+      "CustomerId": 4,
+      "MembershipId": 1
+    },
+    {
+      "Date": "2024-06-15T09:00:00",
+      "Wishes": "Front row",
+      "CustomerId": 3,
+      "ClassId": 3
+    },
+    {
+      "Date": "2024-06-18T17:00:00",
+      "CustomerId": 4,
+      "MembershipId": 2
+    },
+    {
+      "Date": "2024-06-18T17:00:00",
+      "CustomerId": 4,
+      "MembershipId": 2
+    }
+  ],
+  "Timeslots": [
+    {
+      "Date": "2024-07-01T00:00:00",
+      "HourFrom": "08:00:00",
+      "HourTo": "09:00:00",
+      "IdTimetable": 1
+    },
+    {
+      "Date": "2024-07-01T00:00:00",
+      "HourFrom": "09:30:00",
+      "HourTo": "10:30:00",
+      "IdTimetable": 1
+    },
+    {
+      "Date": "2024-07-02T00:00:00",
+      "HourFrom": "14:00:00",
+      "HourTo": "15:30:00",
+      "IdTimetable": 2
+    },
+    {
+      "Date": "2025-06-18T00:00:00",
+      "HourFrom": "16:00:00",
+      "HourTo": "17:30:00"
+    },
+    {
+      "Date": "2024-07-02T00:00:00",
+      "HourFrom": "14:00:00",
+      "HourTo": "15:30:00",
+      "IdTimetable": 1
+    },
+    {
+      "Date": "2025-06-18T00:00:00",
+      "HourFrom": "18:00:00",
+      "HourTo": "19:30:00"
+    }
+  ],
+  "Exps": [
+    {
+      "Description": "Annual membership expiry",
+      "ExpirationDate": "2025-12-31T00:00:00",
+      "IdCustomer": 3,
+      "IdMembership": 1
+    },
+    {
+      "Description": "Monthly membership expiry",
+      "ExpirationDate": "2024-07-31T00:00:00",
+      "IdCustomer": 4,
+      "IdMembership": 2
+    }
+  ],
+  "Reviews": [
+    {
+      "Ranking": 5,
+      "Text": "Loved the energy and instruction in the Morning Yoga class!",
+      "IdCustomer": 3,
+      "IdClass": 1
+    },
+    {
+      "Ranking": 4,
+      "Text": "Great beginner boxing class, learned a lot.",
+      "IdCustomer": 4,
+      "IdClass": 2
+    },
+    {
+      "Ranking": 3,
+      "Text": "Advanced spinning was intense but rewarding.",
+      "IdCustomer": 3,
+      "IdClass": 3
+    },
+    {
+      "Ranking": 4,
+      "Text": "Swimming lessons helped me improve my technique.",
+      "IdCustomer": 4,
+      "IdClass": 4
+    }
+  ],
+  "Equipment": [
+    {
+      "Name": "Yoga Mat"
+    },
+    {
+      "Name": "Spinning Bike"
+    },
+    {
+      "Name": "Boxing Gloves"
+    },
+    {
+      "Name": "Swim Goggles"
+    }
+  ]
+  
+}
+
+

@@ -1,0 +1,28 @@
+@page "{TimeslotId:int}"
+@model YinStudio.Pages.Admin.ChangeInstructorModel
+@{
+    ViewData["Title"] = "Change Instructor";
+}
+
+<h2>Change Instructor for Timeslot on @Model.Timeslot?.Date.ToShortDateString() @Model.Timeslot?.HourFrom</h2>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<form method="post" class="border p-4 rounded bg-light">
+    <div class="form-group">
+        <label>Select Instructor:</label>
+        <select asp-for="SelectedInstructorId" class="form-control" required>
+            <option value="">-- Select Instructor --</option>
+            @foreach (var instructor in Model.Instructors)
+            {
+                <option value="@instructor.IdPerson" @(Model.SelectedInstructorId == instructor.IdPerson ? "selected" : "")>
+                    @instructor.Name @instructor.Surname
+                </option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Change Instructor</button>
+</form>

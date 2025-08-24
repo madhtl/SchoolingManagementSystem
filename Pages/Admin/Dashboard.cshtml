@@ -1,0 +1,52 @@
+@page
+@model YinStudio.Pages.Admin.DashboardModel
+@{
+ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard - Today's Timeslots</h2>
+
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+<div class="alert alert-info">@Model.Message</div>
+}
+
+<<table class="table table-bordered mt-3">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Assigned Instructor</th>
+        <th>Change Instructor</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var ts in Model.TimeslotsToday)
+    {
+        var instructorName = ts.Timetable?.Instructor != null 
+            ? $"{ts.Timetable.Instructor.Name} {ts.Timetable.Instructor.Surname}" 
+            : "Unassigned";
+
+        <tr>
+            <td>@ts.Date.ToShortDateString()</td>
+            <td>@ts.HourFrom</td>
+            <td>@ts.HourTo</td>
+            <td>@instructorName</td>
+            <td>
+                <form method="post" asp-page-handler="Assign">
+                    <input type="hidden" name="SelectedTimeslotId" value="@ts.IdTimeslot" />
+                    <select name="SelectedInstructorId" class="form-select form-select-sm d-inline-block w-auto" required>
+                        <option value="">-- Select Instructor --</option>
+                        @foreach (var instr in Model.Instructors)
+                        {
+                            <option value="@instr.IdPerson">@instr.Name @instr.Surname</option>
+                        }
+                    </select>
+                    <button type="submit" class="btn btn-sm btn-primary">Assign</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

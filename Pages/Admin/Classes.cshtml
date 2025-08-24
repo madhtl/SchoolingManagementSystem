@@ -1,0 +1,31 @@
+@page
+@model YinStudio.Pages.Admin.ClassesModel
+@{
+    ViewData["Title"] = "Classes";
+}
+
+<h2>Classes List</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Instructor</th>
+        <th>Change Instructor</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var cls in Model.Classes)
+    {
+        <tr>
+            <td>@cls.Name</td>
+            <td>@cls.Instructor?.Name ?? "Unassigned"</td>
+            <td>
+                <a asp-page="/Admin/ChangeInstructor" asp-route-classId="@cls.IdClass" class="btn btn-warning btn-sm">
+                    Change Instructor
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

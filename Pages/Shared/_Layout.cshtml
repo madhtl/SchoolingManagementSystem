@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - YinStudio Admin</title>
+    <link rel="stylesheet" href="..."> 
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a asp-page="/Admin/Classes">Classes</a></li>
+        <li><a asp-page="/Admin/Customers">Customers</a></li>
+        <li><a asp-page="/Admin/Timetables">Timetables</a></li>
+        <li><a asp-page="/Admin/Reports">Reports</a></li>
+        <li><a asp-page="/Admin/ChangeInstructor">Change Instructor</a></li> 
+    </ul>
+</nav>
+
+
+<div class="container">
+    @RenderBody()
+</div>
+</body>
+</html>
